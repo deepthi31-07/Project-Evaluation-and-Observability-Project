@@ -1,0 +1,71 @@
+tests/conftest.py:40: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tests/conftest.py:50: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tests/test_us02_batch.py:87: error: Value of type "object" is not indexable  [index]
+tests/test_us02_batch.py:88: error: Value of type "object" is not indexable  [index]
+tests/test_us02_batch.py:199: error: Value of type "object" is not indexable  [index]
+Found 5 errors in 2 files (checked 18 source files)
+E501 Line too long (129 > 100)
+  --> calibration_report.py:17:101
+   |
+16 | labels = [
+17 |     CalibrationLabel(policy_id="POL-1", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+18 |     CalibrationLabel(policy_id="POL-2", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+19 |     CalibrationLabel(policy_id="POL-3", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+   |
+
+E501 Line too long (129 > 100)
+  --> calibration_report.py:18:101
+   |
+16 | labels = [
+17 |     CalibrationLabel(policy_id="POL-1", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+18 |     CalibrationLabel(policy_id="POL-2", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+19 |     CalibrationLabel(policy_id="POL-3", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+20 |     CalibrationLabel(policy_id="POL-4", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+   |
+
+E501 Line too long (129 > 100)
+  --> calibration_report.py:19:101
+   |
+17 |     CalibrationLabel(policy_id="POL-1", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+18 |     CalibrationLabel(policy_id="POL-2", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+19 |     CalibrationLabel(policy_id="POL-3", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+20 |     CalibrationLabel(policy_id="POL-4", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+21 |     CalibrationLabel(policy_id="POL-5", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+   |
+
+E501 Line too long (131 > 100)
+  --> calibration_report.py:20:101
+   |
+18 |     CalibrationLabel(policy_id="POL-2", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+19 |     CalibrationLabel(policy_id="POL-3", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+20 |     CalibrationLabel(policy_id="POL-4", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+21 |     CalibrationLabel(policy_id="POL-5", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+22 |     CalibrationLabel(policy_id="POL-6", policy_type="home",     field="deductible",     predicted_confidence=0.90, correct=True),
+   |
+
+E501 Line too long (131 > 100)
+  --> calibration_report.py:21:101
+   |
+19 |     CalibrationLabel(policy_id="POL-3", policy_type="auto",     field="premium_amount", predicted_confidence=0.95, correct=True),
+20 |     CalibrationLabel(policy_id="POL-4", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+21 |     CalibrationLabel(policy_id="POL-5", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+22 |     CalibrationLabel(policy_id="POL-6", policy_type="home",     field="deductible",     predicted_confidence=0.90, correct=True),
+23 | ]
+   |
+
+E501 Line too long (129 > 100)
+  --> calibration_report.py:22:101
+   |
+20 |     CalibrationLabel(policy_id="POL-4", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+21 |     CalibrationLabel(policy_id="POL-5", policy_type="umbrella",  field="exclusions",     predicted_confidence=0.93, correct=False),
+22 |     CalibrationLabel(policy_id="POL-6", policy_type="home",     field="deductible",     predicted_confidence=0.90, correct=True),
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+23 | ]
+   |
+
+Found 6 errors.

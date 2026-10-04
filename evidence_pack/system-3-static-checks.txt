@@ -1,0 +1,479 @@
+01-claim-readers/starter/supply_chain_risk/__init__.py: error: Duplicate module named "supply_chain_risk" (also at "./01-claim-readers/solution/supply_chain_risk/__init__.py")
+01-claim-readers/starter/supply_chain_risk/__init__.py: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#mapping-file-paths-to-modules for more info
+01-claim-readers/starter/supply_chain_risk/__init__.py: note: Common resolutions include:
+01-claim-readers/starter/supply_chain_risk/__init__.py: note:     a) using `--exclude` to avoid checking one of them,
+01-claim-readers/starter/supply_chain_risk/__init__.py: note:     b) adding `__init__.py` somewhere,
+01-claim-readers/starter/supply_chain_risk/__init__.py: note:     c) using `--explicit-package-bases` or adjusting `MYPYPATH`
+Found 1 error in 1 file (errors prevented further checking)
+F401 [*] `.readers.read_audit` imported but unused
+  --> 01-claim-readers/solution/supply_chain_risk/coordinator.py:23:5
+   |
+21 |     LOGISTICS_EXCLUSIVE_METRICS,
+22 |     NewsExtractor,
+23 |     read_audit,
+   |     ^^^^^^^^^^
+24 |     read_logistics,
+25 |     read_news,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_logistics` imported but unused
+  --> 01-claim-readers/solution/supply_chain_risk/coordinator.py:24:5
+   |
+22 |     NewsExtractor,
+23 |     read_audit,
+24 |     read_logistics,
+   |     ^^^^^^^^^^^^^^
+25 |     read_news,
+26 |     read_quality,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_news` imported but unused
+  --> 01-claim-readers/solution/supply_chain_risk/coordinator.py:25:5
+   |
+23 |     read_audit,
+24 |     read_logistics,
+25 |     read_news,
+   |     ^^^^^^^^^
+26 |     read_quality,
+27 | )
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_quality` imported but unused
+  --> 01-claim-readers/solution/supply_chain_risk/coordinator.py:26:5
+   |
+24 |     read_logistics,
+25 |     read_news,
+26 |     read_quality,
+   |     ^^^^^^^^^^^^
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |
+help: Remove unused import
+
+F401 [*] `.synthesis.build_briefing` imported but unused
+  --> 01-claim-readers/solution/supply_chain_risk/coordinator.py:28:34
+   |
+26 |     read_quality,
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |                                  ^^^^^^^^^^^^^^
+29 |
+30 | # Metrics each source is the sole expected provider of (for gap attribution).
+   |
+help: Remove unused import: `.synthesis.build_briefing`
+
+F401 [*] `uuid` imported but unused
+  --> 01-claim-readers/solution/supply_chain_risk/memory.py:15:8
+   |
+14 | import hashlib
+15 | import uuid
+   |        ^^^^
+16 | from typing import Any
+   |
+help: Remove unused import: `uuid`
+
+F841 Local variable `embed` is assigned to but never used
+  --> 01-claim-readers/solution/supply_chain_risk/memory.py:42:9
+   |
+40 |     def __init__(self, embedding_model: str = EMBED_MODEL) -> None:
+41 |         self._client = chromadb.EphemeralClient(settings=Settings(anonymized_telemetry=False))
+42 |         embed: Any = embedding_functions.SentenceTransformerEmbeddingFunction(
+   |         ^^^^^
+43 |             model_name=embedding_model
+44 |         )
+   |
+help: Remove assignment to unused variable `embed`
+
+F401 [*] `.memory._claim_id` imported but unused
+  --> 01-claim-readers/solution/supply_chain_risk/synthesis.py:18:35
+   |
+16 | from dataclasses import dataclass, field
+17 |
+18 | from .memory import SharedMemory, _claim_id
+   |                                   ^^^^^^^^^
+19 | from .models import Claim
+   |
+help: Remove unused import: `.memory._claim_id`
+
+F401 [*] `.readers.read_audit` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/coordinator.py:23:5
+   |
+21 |     LOGISTICS_EXCLUSIVE_METRICS,
+22 |     NewsExtractor,
+23 |     read_audit,
+   |     ^^^^^^^^^^
+24 |     read_logistics,
+25 |     read_news,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_logistics` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/coordinator.py:24:5
+   |
+22 |     NewsExtractor,
+23 |     read_audit,
+24 |     read_logistics,
+   |     ^^^^^^^^^^^^^^
+25 |     read_news,
+26 |     read_quality,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_news` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/coordinator.py:25:5
+   |
+23 |     read_audit,
+24 |     read_logistics,
+25 |     read_news,
+   |     ^^^^^^^^^
+26 |     read_quality,
+27 | )
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_quality` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/coordinator.py:26:5
+   |
+24 |     read_logistics,
+25 |     read_news,
+26 |     read_quality,
+   |     ^^^^^^^^^^^^
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |
+help: Remove unused import
+
+F401 [*] `.synthesis.build_briefing` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/coordinator.py:28:34
+   |
+26 |     read_quality,
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |                                  ^^^^^^^^^^^^^^
+29 |
+30 | # Metrics each source is the sole expected provider of (for gap attribution).
+   |
+help: Remove unused import: `.synthesis.build_briefing`
+
+F401 [*] `uuid` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/memory.py:15:8
+   |
+14 | import hashlib
+15 | import uuid
+   |        ^^^^
+16 | from typing import Any
+   |
+help: Remove unused import: `uuid`
+
+F841 Local variable `embed` is assigned to but never used
+  --> 01-claim-readers/starter/supply_chain_risk/memory.py:42:9
+   |
+40 |     def __init__(self, embedding_model: str = EMBED_MODEL) -> None:
+41 |         self._client = chromadb.EphemeralClient(settings=Settings(anonymized_telemetry=False))
+42 |         embed: Any = embedding_functions.SentenceTransformerEmbeddingFunction(
+   |         ^^^^^
+43 |             model_name=embedding_model
+44 |         )
+   |
+help: Remove assignment to unused variable `embed`
+
+F401 [*] `datetime.date` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/models.py:11:22
+   |
+ 9 | from __future__ import annotations
+10 |
+11 | from datetime import date
+   |                      ^^^^
+12 |
+13 | from pydantic import BaseModel, ConfigDict, Field
+   |
+help: Remove unused import: `datetime.date`
+
+F401 [*] `csv` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/readers.py:15:8
+   |
+13 | from __future__ import annotations
+14 |
+15 | import csv
+   |        ^^^
+16 | import json
+17 | import sqlite3
+   |
+help: Remove unused import: `csv`
+
+F401 [*] `json` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/readers.py:16:8
+   |
+15 | import csv
+16 | import json
+   |        ^^^^
+17 | import sqlite3
+18 | from datetime import date
+   |
+help: Remove unused import: `json`
+
+F401 [*] `sqlite3` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/readers.py:17:8
+   |
+15 | import csv
+16 | import json
+17 | import sqlite3
+   |        ^^^^^^^
+18 | from datetime import date
+19 | from pathlib import Path
+   |
+help: Remove unused import: `sqlite3`
+
+F401 [*] `datetime.date` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/readers.py:18:22
+   |
+16 | import json
+17 | import sqlite3
+18 | from datetime import date
+   |                      ^^^^
+19 | from pathlib import Path
+20 | from typing import Protocol
+   |
+help: Remove unused import: `datetime.date`
+
+F401 [*] `.models.FailureContext` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/readers.py:22:28
+   |
+20 | from typing import Protocol
+21 |
+22 | from .models import Claim, FailureContext, ReaderResult
+   |                            ^^^^^^^^^^^^^^
+23 |
+24 | AUDIT = "supplier_audit"
+   |
+help: Remove unused import: `.models.FailureContext`
+
+F401 [*] `.memory._claim_id` imported but unused
+  --> 01-claim-readers/starter/supply_chain_risk/synthesis.py:18:35
+   |
+16 | from dataclasses import dataclass, field
+17 |
+18 | from .memory import SharedMemory, _claim_id
+   |                                   ^^^^^^^^^
+19 | from .models import Claim
+   |
+help: Remove unused import: `.memory._claim_id`
+
+F401 [*] `.readers.read_audit` imported but unused
+  --> 02-memory-briefing/solution/supply_chain_risk/coordinator.py:23:5
+   |
+21 |     LOGISTICS_EXCLUSIVE_METRICS,
+22 |     NewsExtractor,
+23 |     read_audit,
+   |     ^^^^^^^^^^
+24 |     read_logistics,
+25 |     read_news,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_logistics` imported but unused
+  --> 02-memory-briefing/solution/supply_chain_risk/coordinator.py:24:5
+   |
+22 |     NewsExtractor,
+23 |     read_audit,
+24 |     read_logistics,
+   |     ^^^^^^^^^^^^^^
+25 |     read_news,
+26 |     read_quality,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_news` imported but unused
+  --> 02-memory-briefing/solution/supply_chain_risk/coordinator.py:25:5
+   |
+23 |     read_audit,
+24 |     read_logistics,
+25 |     read_news,
+   |     ^^^^^^^^^
+26 |     read_quality,
+27 | )
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_quality` imported but unused
+  --> 02-memory-briefing/solution/supply_chain_risk/coordinator.py:26:5
+   |
+24 |     read_logistics,
+25 |     read_news,
+26 |     read_quality,
+   |     ^^^^^^^^^^^^
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |
+help: Remove unused import
+
+F401 [*] `.synthesis.build_briefing` imported but unused
+  --> 02-memory-briefing/solution/supply_chain_risk/coordinator.py:28:34
+   |
+26 |     read_quality,
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |                                  ^^^^^^^^^^^^^^
+29 |
+30 | # Metrics each source is the sole expected provider of (for gap attribution).
+   |
+help: Remove unused import: `.synthesis.build_briefing`
+
+F401 [*] `.readers.read_audit` imported but unused
+  --> 02-memory-briefing/starter/supply_chain_risk/coordinator.py:23:5
+   |
+21 |     LOGISTICS_EXCLUSIVE_METRICS,
+22 |     NewsExtractor,
+23 |     read_audit,
+   |     ^^^^^^^^^^
+24 |     read_logistics,
+25 |     read_news,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_logistics` imported but unused
+  --> 02-memory-briefing/starter/supply_chain_risk/coordinator.py:24:5
+   |
+22 |     NewsExtractor,
+23 |     read_audit,
+24 |     read_logistics,
+   |     ^^^^^^^^^^^^^^
+25 |     read_news,
+26 |     read_quality,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_news` imported but unused
+  --> 02-memory-briefing/starter/supply_chain_risk/coordinator.py:25:5
+   |
+23 |     read_audit,
+24 |     read_logistics,
+25 |     read_news,
+   |     ^^^^^^^^^
+26 |     read_quality,
+27 | )
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_quality` imported but unused
+  --> 02-memory-briefing/starter/supply_chain_risk/coordinator.py:26:5
+   |
+24 |     read_logistics,
+25 |     read_news,
+26 |     read_quality,
+   |     ^^^^^^^^^^^^
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |
+help: Remove unused import
+
+F401 [*] `.synthesis.build_briefing` imported but unused
+  --> 02-memory-briefing/starter/supply_chain_risk/coordinator.py:28:34
+   |
+26 |     read_quality,
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |                                  ^^^^^^^^^^^^^^
+29 |
+30 | # Metrics each source is the sole expected provider of (for gap attribution).
+   |
+help: Remove unused import: `.synthesis.build_briefing`
+
+F401 [*] `uuid` imported but unused
+  --> 02-memory-briefing/starter/supply_chain_risk/memory.py:15:8
+   |
+14 | import hashlib
+15 | import uuid
+   |        ^^^^
+16 | from typing import Any
+   |
+help: Remove unused import: `uuid`
+
+F841 Local variable `embed` is assigned to but never used
+  --> 02-memory-briefing/starter/supply_chain_risk/memory.py:42:9
+   |
+40 |     def __init__(self, embedding_model: str = EMBED_MODEL) -> None:
+41 |         self._client = chromadb.EphemeralClient(settings=Settings(anonymized_telemetry=False))
+42 |         embed: Any = embedding_functions.SentenceTransformerEmbeddingFunction(
+   |         ^^^^^
+43 |             model_name=embedding_model
+44 |         )
+   |
+help: Remove assignment to unused variable `embed`
+
+F401 [*] `.memory._claim_id` imported but unused
+  --> 02-memory-briefing/starter/supply_chain_risk/synthesis.py:18:35
+   |
+16 | from dataclasses import dataclass, field
+17 |
+18 | from .memory import SharedMemory, _claim_id
+   |                                   ^^^^^^^^^
+19 | from .models import Claim
+   |
+help: Remove unused import: `.memory._claim_id`
+
+F401 [*] `.readers.read_audit` imported but unused
+  --> 03-resilient-coordinator/starter/supply_chain_risk/coordinator.py:23:5
+   |
+21 |     LOGISTICS_EXCLUSIVE_METRICS,
+22 |     NewsExtractor,
+23 |     read_audit,
+   |     ^^^^^^^^^^
+24 |     read_logistics,
+25 |     read_news,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_logistics` imported but unused
+  --> 03-resilient-coordinator/starter/supply_chain_risk/coordinator.py:24:5
+   |
+22 |     NewsExtractor,
+23 |     read_audit,
+24 |     read_logistics,
+   |     ^^^^^^^^^^^^^^
+25 |     read_news,
+26 |     read_quality,
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_news` imported but unused
+  --> 03-resilient-coordinator/starter/supply_chain_risk/coordinator.py:25:5
+   |
+23 |     read_audit,
+24 |     read_logistics,
+25 |     read_news,
+   |     ^^^^^^^^^
+26 |     read_quality,
+27 | )
+   |
+help: Remove unused import
+
+F401 [*] `.readers.read_quality` imported but unused
+  --> 03-resilient-coordinator/starter/supply_chain_risk/coordinator.py:26:5
+   |
+24 |     read_logistics,
+25 |     read_news,
+26 |     read_quality,
+   |     ^^^^^^^^^^^^
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |
+help: Remove unused import
+
+F401 [*] `.synthesis.build_briefing` imported but unused
+  --> 03-resilient-coordinator/starter/supply_chain_risk/coordinator.py:28:34
+   |
+26 |     read_quality,
+27 | )
+28 | from .synthesis import Briefing, build_briefing
+   |                                  ^^^^^^^^^^^^^^
+29 |
+30 | # Metrics each source is the sole expected provider of (for gap attribution).
+   |
+help: Remove unused import: `.synthesis.build_briefing`
+
+Found 40 errors.
+[*] 37 fixable with the `--fix` option (3 hidden fixes can be enabled with the `--unsafe-fixes` option).
